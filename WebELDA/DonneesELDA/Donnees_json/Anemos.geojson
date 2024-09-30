@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Anemos",
+"crs": { "type": "name", "properties": { "name": "EPSG:4326" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A29" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.572265832935848, 44.922249898261789, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A9" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.570421655285505, 44.922808736107925, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A6" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.565140364045535, 44.919958703417748, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A24" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.572532676131915, 44.927343858016144, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A25" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.568765440889158, 44.92530728626673, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° anémo": "A26" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.569384317978729, 44.924509116160728, 0.0 ] ] } }
+]
+}

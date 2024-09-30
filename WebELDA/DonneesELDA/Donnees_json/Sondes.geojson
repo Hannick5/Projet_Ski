@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "Sondes",
+"crs": { "type": "name", "properties": { "name": "EPSG:4326" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S10" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.56874822895066, 44.922295442990759, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S11" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.568251742121261, 44.921380248621539, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S12" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.566535088286635, 44.919463959309866, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S22" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.571720818808306, 44.920803173012509, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S23" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.571283284290865, 44.922410070284165, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S37" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.567028139727761, 44.921364930350826, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S38" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.565601378559882, 44.920117570183514, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S55" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.57435494610364, 44.926772177764747, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S56" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.571069837326289, 44.926963991364602, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S93" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.570990221931831, 44.924043558036786, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S94" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.569260359808613, 44.924978845136771, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S95" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.568933734483244, 44.923287707036039, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S98" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.571752567492085, 44.922019224854026, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S103" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.571838043583936, 44.922756658077468, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S104" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.569893161146518, 44.924035337112059, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "id": null, "N° Sonde": "S107" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 6.569736708774993, 44.923183276832724, 0.0 ] ] } }
+]
+}

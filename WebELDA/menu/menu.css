@@ -1,0 +1,231 @@
+body{
+    position: relative;
+    display : grid;
+    height: 700px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font: normal 1em "Helvetica", sans-serif;
+    grid-template-rows: 60px auto;
+    grid-template-columns: 50px auto;
+    }
+    header{
+        /*position: absolute;*/
+        grid-row: 1;
+        grid-column: 1/span 2;
+        color: white;
+        background: #172A3A;
+        z-index: 4; /*Mettre au premier plan , notamment pour la page du tableau de bord*/
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 5% 5% 20% 20% 10% 20% 10% 10%;
+        }
+        #flecheG{
+            grid-row: 1;
+            grid-column: 1;
+        }
+        #flecheD{
+            grid-row: 1;
+            grid-column: 2;
+        }
+        #jour_entete{
+            grid-row: 1;
+            grid-column: 4;
+        }
+        #heure_entete{
+            grid-row: 1;
+            grid-column: 5;
+        }
+        #user_entete{
+            grid-row: 1;
+            grid-column: 7;
+        }
+        #espace_profil_entete{
+            position:relative;
+            grid-row: 1;
+            grid-column: 8;
+            }
+            #profil_entete{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width : 50px;
+                height: 50px;
+            }
+    #menu{
+        position: absolute;
+        grid-row: 2;
+        grid-column: 1;
+        top: 0px;
+        left: -300px;
+        width: 350px;
+        height: 100%;
+        z-index: 4; /*Mettre au premier plan , notamment pour la page du tableau de bord*/
+        
+        transition: left 0.5s;
+
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 85% 15%;
+        }
+        #slideMenu {
+        grid-row: 1;
+        grid-column: 1;
+        background: #e6e6e6;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 60% 40%;
+        grid-template-columns: 100%;
+        }
+        #menuDisplay{
+            padding: 0;
+            margin: 0;
+            grid-row: 1;
+            grid-column: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #options {
+            position: relative;
+            grid-row: 2;
+            grid-column: 1;
+            /*margin-top: 20px;
+            padding: 16px;*/
+            border-top: 1px solid;
+            /*display: flex;
+            align-items: center;
+            flex-direction: column;*/
+            }
+            #optionBtnMenu{
+                position: absolute;
+                top: 5%;
+                left: 35%;
+                width: 30%;
+                height: 30%;
+            }
+            #optionLogoMenu{
+                position: absolute;
+                top: 55%;
+                left: 10%;
+                width: 80%;
+                height: 30%;
+                }
+                #optionLogo{
+                    position: inherit;
+                    top: 0%;
+                    left: 0%;
+                    width: 100%;
+                    height: 100%;
+                }
+        #slideBtn {
+            grid-row: 1;
+            grid-column: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e6e6e6;
+            border-radius: 30px / 100px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+        #slideBtn p {
+            color: #e6e6e6;
+            background-color: #172a3a;
+            padding: 10px;
+            border-radius: 20px / 8px;
+            font: normal 1.5em "Helvetica", sans-serif;
+        }
+    #contenu{
+        position: relative;
+        grid-row: 2;
+        grid-column: 2;
+        top: 1%;
+        left: 1%;
+        width: 99%;
+        height: 99%;
+        
+    }
+
+header p {
+color: white;
+}
+header .arrow {
+color: white;
+}
+
+header *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*             */
+
+li.on,li.off {
+/*padding: 1em;margin: 1em;*/
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin-top: 2%;
+margin-bottom: 2%;
+height: 25%;
+border-radius: 20px;
+text-decoration: none;
+text-align: center;
+color: #737373;
+width: 80%;
+list-style: none;
+
+/* Set up the hover */
+/* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+background-image: linear-gradient( #172A3A, #172A3A), linear-gradient(#E6E6E6, #E6E6E6) ;
+background-size: 0 100%, auto;
+background-repeat: no-repeat;
+background-position: center center;
+transition: all .2s ease-out;
+}
+
+li.off:hover {
+background-size: 100% 100%, auto;
+}
+
+li.on {
+color: rgb(255, 255, 255);
+background: #172A3A;
+border-radius: 20px;
+}
+
+/*    */
+
+
+
+.gear {
+color: #737373;
+}
+
+.gear:hover {
+color: #172A3A;
+}
+
+#menu.show {
+left: 0;
+}
+
+.info {
+    margin: 10px;
+  }
+
+
+  .infoMsg {
+    display: none;
+  }
+  
+  .showInfo {
+    display: flex;
+  }
+  

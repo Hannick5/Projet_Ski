@@ -1,0 +1,100 @@
+#body{
+    height: 1100px;
+}
+
+#contenu {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 30% 70%;
+}
+
+
+#meteo {
+    position: relative;
+    grid-area: 1/1/2/2;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#meteoDet{
+    width: 50%;
+    text-align: center;
+}
+
+#meteoDuJour{
+    height: 100%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#neige{
+    position: relative;
+    grid-area: 1/2/1/2;
+    margin-top: 20px;
+}
+
+#snowChartContainer {
+    position: absolute;
+    top: 10%;
+
+    margin-top: 20px;
+
+    background-color: #e6e6e6;
+    border-radius: 20px;
+
+    width: 100%;
+    height: 92%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#snowDet {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 8%;
+    width:100%;
+    text-align: center;
+}
+
+#carte {
+    position: relative;
+    grid-area: 2/1/2/3;
+    padding: 10%;
+   
+}
+
+#carteTitle {
+    text-align: center;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    background: #172A3A;
+    border-radius: 20px;
+}
+
+.cesium-viewer-timelineContainer {
+    display: none;
+}
+
+.cesium-viewer-animationContainer {
+    display: none;
+}
+.cesium-credit-textContainer * {
+    display: none;
+}
+.cesium-credit-logoContainer * {
+    display: none;
+}
+.cesium-button.cesium-fullscreenButton {
+    display: none;
+}
+    

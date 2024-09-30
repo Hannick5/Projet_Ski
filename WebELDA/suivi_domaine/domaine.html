@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELDA Technology - Suivi du domaine</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+    <link rel="icon" href="../img/IconELDA.png">
+    <link rel="stylesheet" href="../menu/menu.css">
+    <link rel="stylesheet" href="domaine.css">
+</head>
+<body class="domaine" id="body">
+
+
+    <div id="contenu">
+        <div id="meteo">
+            <p id='meteoDet'>Prévisions Météo</p>
+
+        </div>
+        <div id="neige">
+            <p id='snowDet'>Prévisions hauteurs de neige</p>
+            <div id="snowChartContainer">
+                <canvas id="snowChart"></canvas>
+            </div>
+
+        </div>
+        <div id="carte">
+            <p id='carteTitle'>Carte des stations météo</p>
+            <div id="cesiumContainer"></div>
+        </div>
+    </div>
+    
+    <script src="../menu/menu.js"></script>
+    <script src="domaine.js" type="module"></script>
+</body>
+</html>

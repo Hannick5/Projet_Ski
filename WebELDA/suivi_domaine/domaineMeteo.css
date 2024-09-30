@@ -1,0 +1,68 @@
+#body{
+    height: 940px;
+}
+
+#contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tableMeteo {
+    position: relative;
+    height: auto;
+    width: 90%;
+}
+
+td {
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+th {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #738095;
+}
+
+.l1 {
+    background-color: #dde7f2;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+p {
+    font-size: 20px;
+    color: #5fa544;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#meteotitle {
+    padding: 1em;margin: 1em;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    width: 200px;
+    list-style: none;
+    
+    /* Set up the hover */
+    /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+    background-image: linear-gradient( #E6E6E6, #E6E6E6), linear-gradient(#172A3A, #172A3A) ;
+    background-size: 0 100%, auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all .2s ease-out;
+  }
+
+  #meteotitle:hover {
+    background-size: 100% 100%, auto;
+    color: #737373;
+    border: #172A3A solid;
+  }
+
+  

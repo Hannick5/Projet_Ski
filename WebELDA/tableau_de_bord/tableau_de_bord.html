@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELDA Technology - Tableau de bord</title>
+    <link rel="icon" href="../img/IconELDA.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link rel="stylesheet" href="../menu/menu.css">
+    <link rel="stylesheet" href="tableau_de_bord.css">
+</head>
+<body class="TdB" id="body">
+
+    <div id="contenu">
+        <div id="titre">Tableau de bord
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-circle info" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg>
+        </div>
+        <div id="texte_descriptif" class="infoMsg">Cette section permet de visualiser les hauteurs de neige sur le domaine skiable. 
+            <br>Veuillez dérouler le menu 'Sélection' pour charger les hauteurs de neige pour une date donnée. 
+            <br>Ensuite, vous pourrez afficher les données et/ou effectuer des opérations dans le menu 'Outils'.
+        </div>
+
+        <div id="CesiumContainer">
+            <div id="box_mode">
+                <div id="box_titre_mode">Mode : Epaisseur de neige</div>
+                <div id="box_texte_mode">Cliquez sur une position sur les pistes pour afficher la hauteur de neige</div>
+            </div>
+        </div>
+
+        <div id="tableau_de_bord">
+
+            <div class="menu_deroulant" id="selection">
+                <button class="bouton_menu_deroulant" id="b_selection">
+                    <span>Selection</span>
+                    <img src="img/plus.png">
+                </button>
+                <div class="contenu_menu_deroulant" id="contenu_b_selection">
+                    <p id="txt_date">Date</p>
+                    <div id="calendrier-popup">
+                        <input type="text" id="calendrier" placeholder="Sélectionnez une date">
+                    </div>
+                    <p id="txt_zone">Zone</p>
+                    <img id="img_louche" src="img/louche.png">
+                    <p id="info_zone">Ratier</p>
+                    <p id="txt_neige">Epaisseur de neige</p>
+                    
+                    <div id="curseur_epaisseur">
+                        <input type="range" id="cursor" list="tickmarks">
+                        <datalist id="tickmarks">
+                            <option value="0" label="0%"></option>
+                            <option value="50" label="50%"></option>
+                            <option value="100" label="100%"></option>
+                        </datalist>
+                    </div>
+
+                    <button id="valider_selection" value="Valider">Valider</button>
+                </div>
+            </div> 
+        
+            <div class="menu_deroulant" id="legende">
+                <button class="bouton_menu_deroulant" id="b_legende">
+                    <span>Outils</span>
+                    <img src="img/plus.png">
+                </button>
+                <div class="contenu_menu_deroulant" id="contenu_b_legende">
+                    <div id="box_afficher_masquer">
+                        <div id="texte_afficher_masquer">Afficher/Masquer les entités</div>
+
+                        <label id="label_pistes" for="pistes">Pistes de ski</label>
+     
+                        <div class="checkbox-wrapper-12">
+                            <div class="cbx">
+                              <input type="checkbox" id="pistes" name="pistes" class="cbx-12" checked>
+                              <label for="cbx-12"></label>
+                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                <path d="M2 8.36364L6.23077 12L13 2"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        <label id="label_anemos" for="anemos">Anémomètres</label>
+
+                        <div class="checkbox-wrapper-12">
+                            <div class="cbx">
+                                <input type="checkbox" id="anemos" name="anemos">
+                              <label for="cbx-12"></label>
+                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                <path d="M2 8.36364L6.23077 12L13 2"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        <label id="label_enneigeurs" for="enneigeurs">Enneigeurs</label>
+
+                        <div class="checkbox-wrapper-12">
+                            <div class="cbx">
+                                <input type="checkbox" id="enneigeurs" name="enneigeurs">
+                              <label for="cbx-12"></label>
+                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                <path d="M2 8.36364L6.23077 12L13 2"></path>
+                              </svg>
+                            </div>
+                          </div>
+                        
+
+                        <label id="label_sondes" for="sondes">Sondes météo</label>
+
+                        <div class="checkbox-wrapper-12">
+                            <div class="cbx">
+                                <input type="checkbox" id="sondes" name="sondes">
+                              <label for="cbx-12"></label>
+                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                <path d="M2 8.36364L6.23077 12L13 2"></path>
+                              </svg>
+                            </div>
+                          </div>
+                    </div>
+                    
+                    <div id="box_choix_mode">
+                        <div id="texte_choix_mode">Choisir le mode</div>
+                        <label id="label_selec" for="selec">Selection d'entité</label>
+                        <input type="checkbox" id="selec" name="selec">
+                        <label id="label_epaisseur_neige" for="ep_neige">Valeur d'epaisseur de neige</label>
+                        <input type="checkbox" id="ep_neige" name="ep_neige" checked>
+                        <label id="label_profil" for="profil">Calculer le profil</label>
+                        <input type="checkbox" id="profil" name="profil">
+                        <label id="label_polygone" for="polygone">Volume d'épaisseur de neige</label>
+                        <input type="checkbox" id="polygone" name="polygone">
+                    </div>     
+                </div>
+            </div> 
+            
+            <div id="boutons_dim">
+                <button class="btn_encadre" id="bouton_3D">3D</button>
+                <button class="btn_encadre" id="bouton_2D">2D</button>
+            </div>
+
+        </div>
+
+        <div id="GrapheHauteurNeige">
+            <div id="titre_hauteur_neige">Graphique des hauteurs de neige</div>
+            <div id="elevationProfile">
+                <div id="elevationProfileText">
+                    Veuillez tracer une ligne sur la carte, puis cliquez sur le bouton.
+                    <br>
+                    <br>
+                    Vous obtiendrez alors un graphe des hauteurs de neige sur cette ligne.
+                </div>
+                <canvas id="ChartEpNeige"></canvas>
+            </div>
+            
+        </div> 
+    </div>
+    
+      
+
+    <script src="../menu/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="tableau_de_bord.js"></script>
+    <script src="./DrawPolygon/Sandcastle.js"></script>
+    <script src="./DrawPolygon/PolylinePrimitive.js"></script>
+    <script src="./DrawPolygon/PolygonPrimitive.js"></script>
+    <script src="./DrawPolygon/MouseHandler.js"></script>
+    <script src="./DrawPolygon/PolygonDrawing.js"></script>
+    <script src="cesium_script.js"></script>
+    
+</body>
+</html>

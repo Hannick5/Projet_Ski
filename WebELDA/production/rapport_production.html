@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELDA Technology - Rapports de production</title>
+    <link rel="icon" href="../img/IconELDA.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link rel="stylesheet" href="../menu/menu.css">
+    <link rel="stylesheet" href="rapport_production.css">
+</head>
+<body class="production" id="body">
+
+    <div id="contenu">
+        <div id="titre">Rapports de production
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-circle info" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg>
+        </div>
+        <div id="texte_descriptif" class="infoMsg">
+            Cette section est dédiée à l'import ou à la visualisation des données de production des enneigeurs.
+            <br>Pour charger un graphique de consommation d'eau par un enneigeur, veuillez remplir les paramètres dans la section "Visualisation",  puis cliquez sur "Visualiser".
+            <br>Pour importer un fichier csv de données de production par un enneigeur, veuillez cliquez sur "Importer des données".
+        </div>
+
+        <div id="box_decisions">
+            <input type="file" id="fileInput" style="display:none;">
+            <button id="b_import_rapport">Importer<br>des données</button>
+
+            <div id="box_selection">
+                <div id="titre_selection">Sélection</div>
+                <form id="form_rapport" method="post">
+                    
+                    <div id="texte_periode">Période :</div>
+                    <label id="label_debut" for="debut">Du :</label>
+                    <input name="debut" class="calendrier" id="calendrier_debut" required>
+            
+                    <label id="label_fin" for="fin">Au :</label>
+                    <input name="fin" class="calendrier" id="calendrier_fin" required>
+            
+                    <label id="label_numero" for="numero">Numéro de l'enneigeur :</label>
+                    <input id="numero" name="numero" required>
+            
+                    <input type="submit" id="visualiser" value="Visualiser">
+                </form>
+            </div> 
+        </div>
+        
+        <div id="GraphiqueRapport">
+            <div id="texte_debut_graphique">Cette section est dédiée aux graphiques des données de production des enneigeurs.
+                <br>Pour charger un graphique, veuillez remplir les paramètres dans la section "Sélection",  puis cliquez sur Visualiser.
+            </div>
+            <canvas id="RapportChart"></canvas>
+        </div>
+    </div>
+    
+    <script src="../menu/menu.js"></script>
+    <script src="rapport_production.js"></script>
+
+</body>
+</html>

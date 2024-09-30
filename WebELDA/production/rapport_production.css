@@ -1,0 +1,243 @@
+#contenu{
+    display : grid;
+    font: normal 1em "Helvetica", sans-serif;
+    grid-template-rows: 8% 12% 80%;
+    grid-template-columns: 30% 70%;  
+    }
+    #titre{
+        grid-row: 1;
+        grid-column: 1/span 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1%;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: #172a3a;
+        color: white;
+        border-radius: 20px;
+        border-color: #172a3a;
+        font: bold 2em "Helvetica", sans-serif;
+    }
+    #texte_descriptif{
+        grid-row: 2;
+        grid-column: 1/span 2;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #172a3a;
+    }
+    #box_decisions{
+        position: relative;
+        grid-row: 3;
+        grid-column: 1;
+        height: 100%;
+        }
+        #b_import_rapport{
+            position: absolute;
+            top: 0%;
+            left: 1%;
+            width: 98%;
+            height: 20%;
+            border-radius: 5px;
+            background-color: beige;
+            font: normal 1.2em "Helvetica", sans-serif;
+            }
+        #box_selection{
+            position: absolute;
+            top: 25%;
+            left: 1%;
+            width: 98%;
+            height: 74%;
+            border-radius: 5px;
+            color: white;
+            background-color: royalblue;
+            border: solid 2px darkblue;
+
+            }
+            #titre_selection{
+                position: inherit;
+                top: 1%;
+                left: 0%;
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font: bold 1.2em "Helvetica", sans-serif;
+            }
+            #form_rapport{
+                position: inherit;
+                top: 12%;
+                left: 1%;
+                width: 98%;
+                height: 86%;
+                display: grid;
+                grid-template-rows: 10% 15% 15% 2% 10% 15% 3% 30%;
+                grid-template-columns: 20% 80%;
+                }
+                #texte_periode{
+                    grid-row: 1;
+                    grid-column: 1/ span 2;
+                }
+                #label_debut{
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+                #calendrier_debut{
+                    grid-row: 2;
+                    grid-column: 2;
+                }
+                #label_fin{
+                    grid-row: 3;
+                    grid-column: 1;
+                }
+                #calendrier_fin{
+                    grid-row: 1;
+                    grid-column: 2;
+                }
+                #label_numero{
+                    grid-row: 5;
+                    grid-column: 1/ span 2;
+                }
+                #numero{
+                    grid-row: 6;
+                    grid-column: 1/ span 2;
+                    border-color: white;
+                }
+                #visualiser{
+                    grid-row: 8;
+                    grid-column: 1/ span 2;
+                }
+    #GraphiqueRapport{
+        position: relative;
+        grid-row: 3;
+        grid-column: 2;
+        margin-left: 2%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        border: solid 5px darkgrey;
+        }
+        #texte_debut_graphique{
+            position: absolute;
+            top: 0%;
+            left: 1%;
+            width: 98%;
+            height: 100%;
+            z-index:1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font: italic 1em "Helvetica", sans-serif;
+        }
+        #RapportChart{
+          position: absolute;
+          top: 0%;
+          left: 1%;
+          width: 98%;
+          height: 100%;
+          z-index:0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          }
+  
+#form_rapport div,label,button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#form_rapport input,button{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 3px;
+}
+  
+  
+  /* style pour le conteneur du calendrier */
+  .calendrier-popup {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* style pour le champ de saisie de date */
+  .calendrier {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width:95%;
+  }
+  
+  /* style pour le pop-up du calendrier */
+  .flatpickr-calendar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  
+  /* style pour les jours de la semaine dans le calendrier */
+  .flatpickr-weekdays {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 0px;
+    margin-right: 2px;
+  }
+  
+  /* style pour les jours du calendrier */
+  .flatpickr-days {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+  }
+  
+  /* style pour un jour du calendrier */
+  .flatpickr-day {
+    width: calc(100% / 10);
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* style pour un jour du calendrier qui est survolé par la souris */
+  .flatpickr-day:hover:not(.selected):not(.disabled):not(.today) {
+    background-color: #eee;
+  }
+  
+  /* style pour un jour du calendrier qui est aujourd'hui */
+  .flatpickr-day.today {
+    background-color: #eee;
+  }
+  /* style pour les boutons "aujourd'hui" et "effacer" */
+  .flatpickr-clear, .flatpickr-today {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  /* style pour le texte dans le pop-up du calendrier */
+  .flatpickr-monthDropdown-months, .flatpickr-yearDropdown-years, .flatpickr-time {
+    color: #333;
+    font-size: 14px;
+  }
